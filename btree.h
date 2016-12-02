@@ -1,37 +1,26 @@
-#include <stdio.h>
-#include <stdlib.h>
-#define D 5 //árvore de ordem 5
-#define minimo 3 //mínimo de filhos
 
-typedef struct BTPage *Apontador;
+     #define D  5
+     #define MAX_CHAVES  4 //Quantidade m�xima de chaves
+     #define MAX_FILHOS  5 //Quantidade m�xima de filhos
+     #define MIN_OCUP  3 //Ocupa��o m�nima em cada n�
 
-typedef struct ChavePrimaria
-{
-	int NRR;
-	char chave[7];
-}Chave;
 
-typedef struct BTPage
-{
-	//armazena numero de chaves na pagina
-	short int totalChaves;
-	
-	//vetor de chaves
-	Chave chave[D-1];
-	//Ponteiros das paginas filhas, -1 aponta para NULL
-	Apontador filha[D];
-	//struct BTPage filha[D];	
-}Page;
 
-typedef struct
-{
-    Apontador Raiz;
-} TipoArvore;
+typedef struct no_arvoreB arvoreB;
 
-void FAVazia(TipoArvore *Arvore);
+struct no_arvoreB {
+   int num_chaves; //Quantidades de chaves contida no n�
+   char chaves[MAX_CHAVES]; //Chaves armazenadas no n�
+   int NRR[MAX_CHAVES];
+   arvoreB *filhos[MAX_FILHOS]; //Ponteiro para os filhos
+};
 
-int Vazia(TipoArvore Arvore);
+void insere_chave(arvoreB *raiz, char info[], arvoreB *filhodir,int NRR);
 
-int Busca(TipoArvore Arvore, Chave chave);
+arvoreB *insere(arvoreB *raiz, char info[], int *h, char *info_retorno,int NRR);
 
-void LeArquivo(char NomeArq);
+arvoreB *insere_arvoreB(arvoreB *raiz, char info[],int NRR);
+
+int busca_binaria(arvoreB *no, char info[]);
+
+int busca(arvoreB *raiz, char info[]);
