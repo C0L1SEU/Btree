@@ -2,27 +2,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "btree.h"
-<<<<<<< HEAD
-=======
-#include "btree.c"
->>>>>>> c9243a9a38ee7437840b3143e415bc2e0f4c136e
-
 
 int main(int argc, char const *argv[])
 {
-<<<<<<< HEAD
+
     arvoreB *raiz;
     FILE *fp;
     int TipoDeRegistro, NRR;
     char Chave[7],ch;
     int i,j;
-=======
-    arvoreB raiz;
-    FILE *fp;
-    int TipoDeRegistro, NRR;
-    char Chave[7],;
->>>>>>> c9243a9a38ee7437840b3143e415bc2e0f4c136e
-
     if (argc != 4) //Caso seja inserido mais ou menos argumentos na linha de comando
     {
         printf("\nNúmero de argumentos inválido!\n ");
@@ -49,11 +37,8 @@ int main(int argc, char const *argv[])
             fscanf(fp, "\n");//pula linha
             NRR=j;
             j++;
-<<<<<<< HEAD
+
             insere_arvoreB(raiz,Chave,NRR);
-=======
-            insere_arvoreB(&raiz,&Chave,NRR);
->>>>>>> c9243a9a38ee7437840b3143e415bc2e0f4c136e
         }
         fclose(fp);
     }
@@ -69,15 +54,10 @@ int main(int argc, char const *argv[])
             fscanf(fp, "\n");//pula linha
             NRR=j;//pega o NRR
             j++;//incrementa o NRR
-<<<<<<< HEAD
+
             insere_arvoreB(raiz, Chave, NRR);
         }
         fclose(fp);
-=======
-            insere_arvoreB(&raiz, &Chave, NRR);
-        }
-        fclose(fp)
->>>>>>> c9243a9a38ee7437840b3143e415bc2e0f4c136e
     }
 
     else{
